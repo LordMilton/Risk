@@ -1,0 +1,61 @@
+Asia
+7
+Siam
+India
+Middle East
+Kazakhstan
+China
+Mongolia
+Siberia
+Ural
+Irkutsk
+Yakutsk
+Kamchatka
+Japan
+
+Europe
+5
+North Europe
+South Europe
+West Europe
+Britain
+Iceland
+Scandinavia
+Ukraine
+
+Australia
+2
+Papua New Guinea
+Indonesia
+Western Australia
+Eastern Australia
+
+South America
+2
+Venezuela
+Brazil
+Peru
+Argentina
+
+North America
+5
+Central America
+Eastern US
+Western US
+Alberta
+Ontario
+Northwest Territory
+Alaska
+Quebec
+Greenland
+
+Africa
+3
+North Africa
+Egypt
+East Africa
+Congo
+South Africa
+Madagascar
+
+hi

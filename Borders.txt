@@ -1,0 +1,83 @@
+Eastern Australia|Papua New Guinea
+Eastern Australia|Western Australia
+Western Australia|Papua New Guinea
+Western Australia|Indonesia
+Papua New Guinea|Indonesia
+Indonesia|Siam
+Siam|China
+Siam|India
+China|India
+China|Mongolia
+China|Kazakhstan
+China|Siberia
+China|Ural
+India|Kazakhstan
+India|Middle East
+Mongolia|Irkutsk
+Mongolia|Japan
+Mongolia|Siberia
+Mongolia|Kamchatka
+Japan|Kamchatka
+Kazakhstan|Ural
+Kazakhstan|Ukraine
+Kazakhstan|Middle East
+Middle East|Ukraine
+Middle East|Southern Europe
+Middle East|Egypt
+Middle East|East Africa
+Ural|Ukraine
+Ural|Siberia
+Siberia|Yakutsk
+Siberia|Irkutsk
+Yakutsk|Irkutsk
+Yakutsk|Kamchatka
+Irkutsk|Kamchatka
+Kamchatka|Alaska
+Ukraine|Scandinavia
+Ukraine|Southern Europe
+Ukraine|Northern Europe
+Southern Europe|Northern Europe
+Southern Europe|Western Europe
+Southern Europe|Egypt
+Southern Europe|North Africa
+Northern Europe|Western Europe
+Northern Europe|Britain
+Northern Europe|Scandinavia
+Scandinavia|Iceland
+Scandinavia|Britain
+Western Europe|Britain
+Western Europe|North Africa
+Britain|Iceland
+Iceland|Greenland
+Egypt|North Africa
+Egypt|East Africa
+North Africa|East Africa
+North Africa|Congo
+North Africa|Brazil
+Congo|South Africa
+Congo|East Africa
+South Africa|Madagascar
+East Africa|Madagascar
+East Africa|South Africa
+Brazil|Venezuela
+Brazil|Peru
+Brazil|Argentina
+Argentina|Peru
+Peru|Venezuela
+Venezuela|Central America
+Central America|Eastern US
+Central America|Western US
+Eastern US|Ontario
+Eastern US|Quebec
+Eastern US|Western US
+Western US|Alberta
+Western US|Ontario
+Ontario|Quebec
+Ontario|Alberta
+Ontario|Greenland
+Ontario|Northwest Territory
+Greenland|Northwest Territory
+Greenland|Quebec
+Northwest Territory|Alberta
+Northwest Territory|Alaska
+Alberta|Alaska

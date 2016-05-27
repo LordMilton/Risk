@@ -14,6 +14,7 @@ public class TerritoryMethod implements Clickable
    private static int[] numbers = {105,120,125,120};
    //------------------------------------------------------
    //Sets the number of players and creates all the players.
+   //POSTCONDITION: if the mouse is clicked, will apply the proper setup
    //------------------------------------------------------
    public void click()
    {
@@ -51,6 +52,7 @@ public class TerritoryMethod implements Clickable
    //------------------------------------------------------
    //Draws it to the screen.
    //@param Graphics  object to draw Clickable object
+   //POSTCONDITION: will draw the object to the screen iff it has not been clicked yet
    //------------------------------------------------------
    public void draw(Graphics g)
    {
@@ -69,6 +71,8 @@ public class TerritoryMethod implements Clickable
    //------------------------------------------------------
    //Loads the number of player screen
    //@return Image to draw
+   //PRECONDITION: the file TerritoryMethod.png exists
+   //POSTCONDITION: will have loaded the files
    //------------------------------------------------------
    public static BufferedImage loadBufferedImage()
    {

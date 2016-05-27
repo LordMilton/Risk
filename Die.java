@@ -145,6 +145,8 @@ public class Die implements Clickable
    }
    //------------------------------------------------
    //Hides the dice
+   //PRECONDITION: The dice are visible
+   //POSTCONDITION: The battle will be calculated and units transferred properly
    //------------------------------------------------
    public static void hideDice()
    {

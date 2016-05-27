@@ -13,7 +13,7 @@ public class TerritoryMethod implements Clickable
    //stores the total number of units based on the number of players in a game.
    private static int[] numbers = {105,120,125,120};
    //------------------------------------------------------
-   //Sets the number of players and creates all the players.
+   //Sets the number of players and creates all the players. 
    //POSTCONDITION: if the mouse is clicked, will apply the proper setup
    //------------------------------------------------------
    public void click()

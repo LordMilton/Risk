@@ -12,6 +12,8 @@ public interface Clickable
    //------------------------------------------------------
    //Draws Clickable object to the screen
    //@param Graphics  object to draw Clickable object
+   //PRECONDITION: Object is visible
+   //POSTCONDITION: Object will be seen on screen
    //------------------------------------------------------
    public void draw(Graphics g);
 }

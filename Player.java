@@ -30,6 +30,7 @@ public class Player
    //-------------------------------------------
    //Makes an ArrayList of Continents by reading from Continents.txt
    //@return ArrayList of Continents
+   //PRECONDITION: Continents.txt exists
    //-------------------------------------------
    private static ArrayList<Continent> getContinents()
    {
@@ -133,6 +134,7 @@ public class Player
    }
    //-------------------------------------------
    //viewHand Draws the cards in the Player object's hands to the play screen
+   //POSTCONDITION: The entire hand will be made invisible if it was visible and visible if it was invisible
    //-------------------------------------------
    public void viewHand()
    {
@@ -141,6 +143,7 @@ public class Player
    }
     //-------------------------------------------
     // Sets the turn to the next phase
+    // POSTCONDITION: The phase will be a valid phase in a valid player's turn
     //-------------------------------------------
    public static void incrementCurrPhase()
    {
@@ -166,6 +169,7 @@ public class Player
    }
     //-------------------------------------------
     // Resets the selected cities.
+    // POSTCONDITION: All units will be properly calculated
     //-------------------------------------------
    public static void resetSelected(int lossesattacker, int lossesdefender, int selected)
    {
@@ -193,6 +197,7 @@ public class Player
    }
    //-------------------------------------------
    //Processes the turn.
+   //POSTCONDITION: The user input will be read and the game will have processed events
    //-------------------------------------------
    public static void processTurn()
    {

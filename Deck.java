@@ -50,7 +50,9 @@ public class Deck implements Clickable
    private Card drawCard()
    {
       int random = (int)(Math.random()*deck.size());
-      return deck.remove(random);
+      if(!deck.isEmpty())
+         return deck.remove(random);
+      return null;
    }
    //-------------------------------------------
    //Refer to click() from Clickable

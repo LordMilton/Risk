@@ -40,6 +40,7 @@ public class Continent
    //-------------------------------------------------
    //addTerritory Adds a Territory object to the Continent's list of territories
    //@param territory Territory to add to list
+   //POSTCONDITION: territories has increased in length by 1
    //-------------------------------------------------
    public void addTerritory(Territory territory)
    {

@@ -24,6 +24,7 @@ public class Territory
    //------------------------------------------------------
    //Adds the territory to the borders list and this to the other territory's border list
    //@param the territory to add
+   //POSTCONDITION: Both territories will have the other added in their borders
    //------------------------------------------------------
    public void addBorder(Territory toAdd)
    {
@@ -42,6 +43,7 @@ public class Territory
    //------------------------------------------------------
    //Sets the owner of the territory
    //@param Player who is the new owner
+   //POSTCONDITION: Owner will be set to the parameter. If the territory was unowned, it will have one unit in it.
    //------------------------------------------------------
    public void setOwner(Player p)
    {
@@ -87,6 +89,8 @@ public class Territory
    //Moves the specified number of units from 'this' Territory to the specified Territory
    //@param toTerritory Territory to move the units to
    //@param units Number of units to transfer
+   //PRECONDITION: this must have more units than the parameter units
+   //POSTCONDITION: There will be the same number of units total in the world as before it was called
    //------------------------------------------------------
    public void fortify(Territory toTerritory, int units)
    {

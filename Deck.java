@@ -20,6 +20,7 @@ public class Deck implements Clickable
    //-------------------------------------------
    //shuffle Resets deck as all cards in discard Deck
    //@param discard Stack of cards from discard Deck
+   //POSTCONDITION: gameDeck will be what discard used to be, discard will contain no cards
    //-------------------------------------------
    public static void shuffle()
    {
@@ -29,6 +30,7 @@ public class Deck implements Clickable
    //-------------------------------------------
    //addCard Adds a certain Card object to deck
    //@param card Card object to add
+   //POSTCONDITION: deck will increase in length by 1
    //-------------------------------------------
    public void addCard(Card card)
    {
@@ -38,6 +40,7 @@ public class Deck implements Clickable
    //get Accesses the Card object at a specified index in deck
    //@param index Index of Card object to be retrieved
    //@return Card at the specified index in deck
+   //PRECONDITION: index is within bounds of deck
    //-------------------------------------------
    public Card get(int index)
    {
@@ -46,6 +49,8 @@ public class Deck implements Clickable
    //-------------------------------------------------
    //drawCard Accesses a random card from the Deck and removes that card from the Deck
    //@return drawnCard Card drawn and removed from the Deck
+   //PRECONDITION: deck is not empty
+   //POSTCONDITION: deck will be reduced in length by 1
    //-------------------------------------------------
    private Card drawCard()
    {
@@ -69,6 +74,7 @@ public class Deck implements Clickable
    }
    //-------------------------------------------
    //Refer to draw(Graphics g) from Clickable
+   //PRECONDITION: Deck is visible
    //-------------------------------------------
    public void draw(Graphics g)
    {
@@ -89,6 +95,7 @@ public class Deck implements Clickable
    //-------------------------------------------
    //Sets the game deck.
    //@param the game deck
+   //POSTCONDITION: gameDeck will be set equal to parameter
    //-------------------------------------------
    public static void setDeck(Deck gamedeck)
    {
@@ -106,6 +113,7 @@ public class Deck implements Clickable
    //Used to add the cards to the panel
    //@param the index of the card you want
    //@return the card at that position
+   //PRECONDITION: gameDeck[index] is not null
    //-------------------------------------------
    public static Card getGameDeckCard(int index)
    {
@@ -114,6 +122,7 @@ public class Deck implements Clickable
    //-------------------------------------------
    //Used to display the cards on the panel
    //@param whether the deck cards will be visible or invisible
+   //POSTCONDITION: Deck visibility will be set to parameter
    //-------------------------------------------
    public void setVisible(boolean visible)
    {

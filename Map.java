@@ -130,6 +130,8 @@ public class Map implements Clickable
    }
    //------------------------------------------------------
    //Redraws the map; call after a single city is captured
+   //PRECONDITION: Territory has been captured
+   //POSTCONDITION: Territory changes color
    //------------------------------------------------------
    public static void miniUpdate(Territory t)
    {
@@ -142,7 +144,8 @@ public class Map implements Clickable
    }
    //------------------------------------------------------
    //Loads the map.
-   //Private because it should only be called in this class. Othewise, bad things happen.
+   //Private because it should only be called in this class. Otherwise, bad things happen.
+   //PRECONDITION: Map.png exists
    //------------------------------------------------------
    private static void loadMap()
    {
@@ -154,7 +157,8 @@ public class Map implements Clickable
       }
    }
    //------------------------------------------------------
-   //Loads the map indexes. Only needs to be called once.
+   //Loads the map indices. Only needs to be called once.
+   //PRECONDITION: Map.png exists
    //------------------------------------------------------
    public static void firstLoad()
    {
@@ -181,6 +185,7 @@ public class Map implements Clickable
    //------------------------------------------------------
    //Loads the territories
    //@return the territories
+   //PRECONDITION: Territories.txt exists
    //------------------------------------------------------
    public static Territory[] loadTerritories()
    {
@@ -206,6 +211,7 @@ public class Map implements Clickable
    }
    //------------------------------------------------------
    //Loads the borders
+   //PRECONSITION: Borders.txt exists
    //------------------------------------------------------
    public static void loadBorders()
    {
@@ -244,6 +250,7 @@ public class Map implements Clickable
    }
    //------------------------------------------------------
    //Randomizes the owners of the territories
+   //PRECONDITION: "Random" has been selected in options screen
    //------------------------------------------------------
    public static void randomizeTerritories()
    {
@@ -260,6 +267,8 @@ public class Map implements Clickable
    }
    //------------------------------------------------------
    //Sets whether a province is glowing
+   //PRECONDITION: Mouse is hovering over a Territory
+   //POSTCONDITION: Territory will darken
    //------------------------------------------------------
    public static void set()
    {

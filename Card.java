@@ -31,6 +31,7 @@ public class Card implements Clickable
    //Sets the card to be visible
    //@param x the x coordinate to display the card at
    //@param y the y coordinate to display the card at
+   //POSTCONDITION: Card is visible and clickable when drawn
    //------------------------------------------------------
    public void setVisible(int x, int y)
    {
@@ -40,6 +41,7 @@ public class Card implements Clickable
    }
    //------------------------------------------------------
    //Sets the card to be invisible
+   //POSTCONDITION: Card is invisible and will not be drawn
    //------------------------------------------------------
    public void setInvisible()
    {
@@ -87,6 +89,7 @@ public class Card implements Clickable
    //------------------------------------------------
    //Loads the static images
    //@return the images of the cards
+   //PRECONDITION: Files card[1-4].png exist
    //------------------------------------------------
    private static BufferedImage[] getImages()
    {

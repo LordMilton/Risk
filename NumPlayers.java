@@ -39,6 +39,8 @@ public class NumPlayers implements Clickable
    //------------------------------------------------------
    //Loads the number of player screen
    //@return Image to draw
+   //PRECONDITION: NumPlayers.png exists
+   //POSTCONDITION: NumPlayers.png is drawn to the screen
    //------------------------------------------------------
    public static BufferedImage loadBufferedImage()
    {

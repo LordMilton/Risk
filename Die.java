@@ -17,6 +17,8 @@ public class Die implements Clickable
    private static Die[] dice = {new Die(Color.RED,-100,-100),new Die(Color.RED,-100,-100),new Die(Color.RED,-100,-100),new Die(Color.WHITE,-100,-100),new Die(Color.WHITE,-100,-100)};
    //-----------------------------------------------
    //Fills the static Image[] sides with the .png files created for Die.java
+   //PRECONDITION: Files [1-6].png exist
+   //POSTCONDITION: sides contains .png files
    //-----------------------------------------------
    public static Image[] fillSides()
    {
@@ -47,6 +49,7 @@ public class Die implements Clickable
    }
    //------------------------------------------------
    //rollAllClicked Rolls all currently clicked dice on screen
+   //POSTCONDITION: Dies clicked will be rolled
    //------------------------------------------------
    public static void rollAllClicked()
    {
@@ -58,6 +61,7 @@ public class Die implements Clickable
    }
    //------------------------------------------------
    //roll Rolls the die
+   //POSTCONDITION: number is changed
    //------------------------------------------------
    private void roll()
    {
@@ -82,6 +86,7 @@ public class Die implements Clickable
    }
    //------------------------------------------------
    //Refer to click() from Clickable
+   //POSTCONDITION: clicked will change
    //------------------------------------------------
    public void click()
    {
@@ -113,14 +118,18 @@ public class Die implements Clickable
    //Places the allowed dice on the screen
    //@param red the number of units in the attacking city
    //@param white the number of units in the defending city
+   //PRECONDITION: Attacking Territory must contain more than 1 unit
+   //POSTCONDITION: "Roll" button will be drawn
    //------------------------------------------------
    public static void showDice(int red, int white)
    {
       if(dice[0].x<0)
       {
          red--;
-         for(int i = 0; i < 5; i++)
-            dice[i].clicked = (i%3)==0;
+         for(int i = 0; i < 3; i++)
+            dice[i].clicked = (i < red);
+         for(int i = 3; i < 5; i++)
+            dice[i].clicked = (i < (white+3))
          for(int i = 0; i < red && i < 3; i++)
          {
             dice[i].x = 200 + (i*75);

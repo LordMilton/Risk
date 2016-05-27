@@ -23,6 +23,11 @@ public class RiskPanel extends JPanel
       drawables.add(new NumPlayers());
       //put things in bottom to top
    }
+   //------------------------------------
+   //Draws everything onto the screen
+   //@Param the graphics object to draw on
+   //POSTCONDITION: All objects that should be drawn on the screen will be
+   //------------------------------------
    public void paint(Graphics g)
    {
       g.setColor(Color.WHITE);

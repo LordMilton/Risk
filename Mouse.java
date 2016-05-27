@@ -31,6 +31,7 @@ public class Mouse implements MouseListener, MouseMotionListener
    //Returns whether the mouse has been clicked and not moved since it was clicked
    //Sets clicked to false.
    //@return whether the mouse has been clicked
+   //POSTCONDITION: clicked is changed
    //------------------------------------------------------
    public static boolean mouseClicked()
    {
@@ -57,6 +58,7 @@ public class Mouse implements MouseListener, MouseMotionListener
    //------------------------------------------------------
    //@override
    //sets the clicked to be true
+   //POSTCONDITION: clicked is changed
    //------------------------------------------------------
    public void mouseClicked(MouseEvent e)
    {

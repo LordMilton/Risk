@@ -176,21 +176,40 @@ public class Player
       terr1 = null;
       terr2 = null;
       if(currPhase == 1)
-      //change to check if cards are used?
+         int cardsClicked = 0;
+         ArrayList<Card> submitted = new ArrayList<Card>();
+         for(Card card:players.get(currPlayer).getHand())
+         {
+            if(card.isClicked)
+            {
+               cardsClicked++;
+               submitted.add(card);
+            }
+         }
+         boolean validCards = false;
+         if(cardsClicked == 3)
+         {
+            for(Card card:submitted)
+            {
+            if(submitted.get(i).getType() == 4)
+               validCards = true;
+            }
+         }
+      //TODO: change to check if cards are used?
          unitsToAdd = players.get(currPlayer).getUnits(false);
    }
     //-------------------------------------------
     // Resets the selected cities.
     // POSTCONDITION: All units will be properly calculated
     //-------------------------------------------
-   public static void resetSelected(int lossesattacker, int lossesdefender, int selected)
+   public static void resetSelected(int lossesAttacker, int lossesDefender, int selected)
    {
       if(terr1!=null)
          terr1.setSelected(false);
       if(terr2!=null)
          terr2.setSelected(false);
-      terr1.removeUnits(lossesattacker);
-      terr2.removeUnits(lossesdefender);
+      terr1.removeUnits(lossesAttacker);
+      terr2.removeUnits(lossesDefender);
       if(terr2.getUnits()==0)
       {
          terr1.removeUnits(selected);

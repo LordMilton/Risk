@@ -89,13 +89,16 @@ public class Territory
    //Moves the specified number of units from 'this' Territory to the specified Territory
    //@param toTerritory Territory to move the units to
    //@param units Number of units to transfer
-   //PRECONDITION: this must have more units than the parameter units
+   //PRECONDITION: this must contain more units than parameter units
    //POSTCONDITION: There will be the same number of units total in the world as before it was called
    //------------------------------------------------------
    public void fortify(Territory toTerritory, int units)
    {
-      this.removeUnits(units);
-      toTerritory.addUnits(units);
+      if(this.getUnits > units+1)
+      {
+         this.removeUnits(units);
+         toTerritory.addUnits(units);
+      }
    }
    //------------------------------------------------------
    //Sets whether the Territory should be selected.

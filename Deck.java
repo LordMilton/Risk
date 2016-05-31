@@ -8,18 +8,18 @@ public class Deck implements Clickable
 {
    private static Deck discard = new Deck();
    private static Deck gameDeck = new Deck();
-   private Stack<Card> deck;
+   private LinkedList<Card> deck;
    public Deck()
    {
-      deck = new Stack<Card>();
+      deck = new LinkedList<Card>();
    }
-   public Deck(Stack<Card> cards)
+   public Deck(LinkedList<Card> cards)
    {
       deck = cards;
    }
    //-------------------------------------------
    //shuffle Resets deck as all cards in discard Deck
-   //@param discard Stack of cards from discard Deck
+   //@param discard LinkedList of cards from discard Deck
    //POSTCONDITION: gameDeck will be what discard used to be, discard will contain no cards
    //-------------------------------------------
    public static void shuffle()

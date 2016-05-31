@@ -129,7 +129,7 @@ public class Die implements Clickable
          for(int i = 0; i < 3; i++)
             dice[i].clicked = (i < red);
          for(int i = 3; i < 5; i++)
-            dice[i].clicked = (i < (white+3))
+            dice[i].clicked = (i < (white+3));
          for(int i = 0; i < red && i < 3; i++)
          {
             dice[i].x = 200 + (i*75);

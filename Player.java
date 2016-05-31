@@ -19,9 +19,11 @@ public class Player
    private LinkedList<Territory> territories;
    private Deck hand;
    private Color color;
+   private boolean alive;
    private static boolean handVisible = false;
    public Player(Color color)
    {
+      alive = true;
       this.color = color;
       hand = new Deck();
       territories = new LinkedList<Territory>();
@@ -58,6 +60,16 @@ public class Player
          System.err.println("Failed to read from Continents.txt");
       }
       return continents;
+   }
+   //-------------------------------------------
+   //Checks if Player is alive, corrects 'alive' and returns the answer
+   //@return true if Player still has territories, false otherwise
+   //-------------------------------------------
+   private boolean isPlayerDead()
+   {
+      if(territories.isEmpty())
+         alive = false;
+      return alive;
    }
    //-------------------------------------------
    //Calculates the number of units the Player should receive

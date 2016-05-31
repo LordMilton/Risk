@@ -176,11 +176,12 @@ public class Player
       terr1 = null;
       terr2 = null;
       if(currPhase == 1)
+      {
          int cardsClicked = 0;
          ArrayList<Card> submitted = new ArrayList<Card>();
-         for(Card card:players.get(currPlayer).getHand())
+         for(Card card:players.get(currPlayer).getHand().getList())
          {
-            if(card.isClicked)
+            if(card.isClicked())
             {
                cardsClicked++;
                submitted.add(card);
@@ -191,12 +192,19 @@ public class Player
          {
             for(Card card:submitted)
             {
-            if(submitted.get(i).getType() == 4)
+               if(card.getType() == 4)
+                  validCards = true;
+            }
+            if(submitted.get(1).getType() == submitted.get(2).getType() && submitted.get(1).getType() == submitted.get(3).getType() ||
+               (submitted.get(1).getType() != submitted.get(2).getType() && submitted.get(1).getType() != submitted.get(3).getType() &&
+               submitted.get(2).getType() != submitted.get(3).getType()))
+            {
                validCards = true;
             }
          }
-      //TODO: change to check if cards are used?
-         unitsToAdd = players.get(currPlayer).getUnits(false);
+      //TODO: Allow cards to be selected before turn begins [New Phase maybe?]
+         unitsToAdd = players.get(currPlayer).getUnits(validCards);
+      }
    }
     //-------------------------------------------
     // Resets the selected cities.

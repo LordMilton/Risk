@@ -28,6 +28,14 @@ public class Deck implements Clickable
       discard = new Deck();
    }
    //-------------------------------------------
+   //Returns list of cards
+   //@return list of cards in Deck
+   //-------------------------------------------
+   public LinkedList<Card> getList()
+   {
+      return deck;
+   }
+   //-------------------------------------------
    //addCard Adds a certain Card object to deck
    //@param card Card object to add
    //POSTCONDITION: deck will increase in length by 1

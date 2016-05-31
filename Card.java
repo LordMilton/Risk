@@ -28,6 +28,14 @@ public class Card implements Clickable
       return(clicked);
    }
    //------------------------------------------------------
+   //Returns the card's type
+   //@return type[int]
+   //------------------------------------------------------
+   public int getType()
+   {
+      return type;
+   }
+   //------------------------------------------------------
    //Sets the card to be visible
    //@param x the x coordinate to display the card at
    //@param y the y coordinate to display the card at

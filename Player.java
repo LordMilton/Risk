@@ -200,13 +200,25 @@ public class Player
          {
             for(Card card:submitted)
             {
-               if(card.getType() == 4)
+               if(card.getType() == 3)
                   validCards = true;
             }
             if(submitted.get(0).getType() == submitted.get(1).getType() && submitted.get(0).getType() == submitted.get(2).getType() || (submitted.get(0).getType() != submitted.get(1).getType() && submitted.get(0).getType() != submitted.get(2).getType() && submitted.get(1).getType() != submitted.get(2).getType()))
             {
                validCards = true;
             }
+         }
+         if(validCards)
+         {
+            for(int i = players.get(currPlayer).getHand().getList().size() - 1; i >= 0; i--)
+            {
+               for(Card used:submitted)
+               {
+                  if(used == players.get(currPlayer).getHand().get(i))
+                     players.get(currPlayer).getHand().drawCard(i);
+               }
+            }
+               
          }
       //TODO: Allow cards to be selected before turn begins [New Phase maybe?]
          unitsToAdd = players.get(currPlayer).getUnits(validCards);

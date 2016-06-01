@@ -42,7 +42,7 @@ public class Deck implements Clickable
    //-------------------------------------------
    public void addCard(Card card)
    {
-      deck.push(card);
+      deck.add(card);
    }
    //-------------------------------------------
    //get Accesses the Card object at a specified index in deck
@@ -65,7 +65,20 @@ public class Deck implements Clickable
       int random = (int)(Math.random()*deck.size());
       if(!deck.isEmpty())
          return deck.remove(random);
-      return null;
+      shuffle();
+      random = (int)(Math.random()*deck.size());
+      return deck.remove(random);
+   }
+   //-------------------------------------------------
+   //drawCard Accesses a specified card from the Deck, removes that card from the Deck, then adds that Card to the discard
+   //@param pos Position of card in the Deck to remove
+   //@return drawnCard Card drawn and removed from the Deck
+   //PRECONDITION: deck is not empty
+   //POSTCONDITION: deck will be reduced in length by 1
+   //-------------------------------------------------
+   public void drawCard(int pos)
+   {
+      discard.addCard(deck.remove(pos));
    }
    //-------------------------------------------
    //Refer to click() from Clickable

@@ -44,10 +44,11 @@ public class TerritoryMethod implements Clickable
                {
                   //-------------------------------------
                   //For debugging
-                  Map.getSelectedTerritory().addUnits(21);
+                  //Map.getSelectedTerritory().addUnits(21);
+                  //tally += 21;
                   //-------------------------------------
-                  //Map.getSelectedTerritory().addUnits(1);
-                  tally++;
+                  Map.getSelectedTerritory().addUnits(1);
+                  tally ++;
                   if(tally==numbers[Player.numPlayers()-3])
                      Player.incrementCurrPhase();
                }

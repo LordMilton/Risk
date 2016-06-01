@@ -40,5 +40,14 @@ public class RiskPanel extends JPanel
       {
          drawables.get(i).draw(g);
       }
+      g.setColor(Color.BLACK);
+      if(Player.getCurrPhase()==0)
+         g.drawString("Pick Cards", 5, 10);
+      else if(Player.getCurrPhase()==1)
+         g.drawString("Place Units: "+ Player.getUnitsToAdd(), 5, 10);
+      else if(Player.getCurrPhase()==2)
+         g.drawString("Attack", 5, 10);
+      else if(Player.getCurrPhase()==3)
+         g.drawString("Fortify", 5, 10);
    }
 }

@@ -153,6 +153,14 @@ public class Player
       handVisible = !handVisible;
       hand.setVisible(handVisible);
    }
+   //-------------------------------------------
+   //Returns the current phase of the Player's turn
+   //@return The current phase of the turn
+   //-------------------------------------------
+   public static int getCurrPhase()
+   {
+      return currPhase;
+   }
     //-------------------------------------------
     // Sets the turn to the next phase
     // POSTCONDITION: The phase will be a valid phase in a valid player's turn
@@ -163,7 +171,7 @@ public class Player
       if(currPhase > 3)
       {
          currPlayer = (currPlayer+1)%players.size();
-         currPhase = 1;
+         currPhase = 0;
          Button.changeLabel("invisible");
       }
       if(currPhase == 3)
@@ -176,11 +184,12 @@ public class Player
       terr1 = null;
       terr2 = null;
       if(currPhase == 1)
+      {
          int cardsClicked = 0;
          ArrayList<Card> submitted = new ArrayList<Card>();
-         for(Card card:players.get(currPlayer).getHand())
+         for(Card card:players.get(currPlayer).getHand().getList())
          {
-            if(card.isClicked)
+            if(card.isClicked())
             {
                cardsClicked++;
                submitted.add(card);
@@ -191,12 +200,17 @@ public class Player
          {
             for(Card card:submitted)
             {
-            if(submitted.get(i).getType() == 4)
+               if(card.getType() == 4)
+                  validCards = true;
+            }
+            if(submitted.get(0).getType() == submitted.get(1).getType() && submitted.get(0).getType() == submitted.get(2).getType() || (submitted.get(0).getType() != submitted.get(1).getType() && submitted.get(0).getType() != submitted.get(2).getType() && submitted.get(1).getType() != submitted.get(2).getType()))
+            {
                validCards = true;
             }
          }
-      //TODO: change to check if cards are used?
-         unitsToAdd = players.get(currPlayer).getUnits(false);
+      //TODO: Allow cards to be selected before turn begins [New Phase maybe?]
+         unitsToAdd = players.get(currPlayer).getUnits(validCards);
+      }
    }
     //-------------------------------------------
     // Resets the selected cities.
@@ -227,11 +241,23 @@ public class Player
       terr2 = null;
    }
    //-------------------------------------------
+   //Returns the units the player has left to place
+   //@return Units Player still has left to add before beginning next turn phase
+   //-------------------------------------------
+   public static int getUnitsToAdd()
+   {
+      return unitsToAdd;
+   }
+   //-------------------------------------------
    //Processes the turn.
    //POSTCONDITION: The user input will be read and the game will have processed events
    //-------------------------------------------
    public static void processTurn()
    {
+      if(currPhase == 0)
+      {
+         Button.changeLabel("Done");
+      }
       if(currPhase == 1)
       {
          if(Map.getSelectedTerritory() != null && Map.getSelectedTerritory().getOwner() == players.get(currPlayer))

@@ -42,8 +42,13 @@ public class TerritoryMethod implements Clickable
                }
                else if(tally >= 42 && Map.getSelectedTerritory().getOwner()==Player.getPlayer(tally%Player.numPlayers()))
                {
+                  //-------------------------------------
+                  //For debugging
+                  //Map.getSelectedTerritory().addUnits(21);
+                  //tally += 21;
+                  //-------------------------------------
                   Map.getSelectedTerritory().addUnits(1);
-                  tally++;
+                  tally ++;
                   if(tally==numbers[Player.numPlayers()-3])
                      Player.incrementCurrPhase();
                }

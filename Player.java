@@ -239,8 +239,20 @@ public class Player
       if(terr2.getUnits()==0)
       {
          terr1.removeUnits(selected);
+         Player attacked = terr1.getOwner();
          terr2.setOwner(terr1.getOwner());
-         //check if the player is eliminated
+         if(attacked.isPlayerDead())
+         {
+            Deck.giveCards(attacked, players.get(currPlayer));
+            for(int i = 0; i < players.size(); i++)
+            {
+               if(players.get(i) == attacked)
+               {
+                  players.remove(i);
+                  break;
+               }
+            }
+         }
          terr2.addUnits(selected);
          Map.miniUpdate(terr2);
          if(!captured)

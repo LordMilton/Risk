@@ -70,6 +70,18 @@ public class Deck implements Clickable
       return deck.remove(random);
    }
    //-------------------------------------------------
+   //Gives all of the killed Player's cards to their killer
+   //@param giver Player who was killed
+   //@param receiver Player who killed giver
+   //PRECONDITION: giver is dead
+   //POSTCONDITION: giver's deck is empty, receiver's deck gains all Cards previously in giver's hand
+   //-------------------------------------------------
+   public static void giveCards(Player giver, Player receiver)
+   {
+      for(int i = giver.getHand().getList().size() - 1; i >= 0; i--)
+         receiver.getHand().addCard(giver.getHand().drawCard());
+   }
+   //-------------------------------------------------
    //drawCard Accesses a specified card from the Deck, removes that card from the Deck, then adds that Card to the discard
    //@param pos Position of card in the Deck to remove
    //@return drawnCard Card drawn and removed from the Deck
